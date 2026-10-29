@@ -1,0 +1,54 @@
+{
+  "model_type": "standardized_logistic_regression",
+  "version": 1,
+  "trained": true,
+  "dataset": "StatsBomb Open Data, World Cup 2018",
+  "task": "Estimate probability of completed pass given recorded start and endpoint",
+  "features": [
+    "x",
+    "y",
+    "dx",
+    "dy",
+    "distance",
+    "minute"
+  ],
+  "means": [
+    59.858057601407054,
+    40.13933164779598,
+    6.529899967022096,
+    -0.11907771792898758,
+    21.337567148185233,
+    46.314224469605364
+  ],
+  "scales": [
+    26.757913330195823,
+    23.887930413244145,
+    17.822467109501975,
+    17.71391427799848,
+    14.791385810547288,
+    28.232590720284904
+  ],
+  "coefficients": [
+    -0.6151104525981054,
+    -0.0350503020742305,
+    -1.45386209888262,
+    0.0017544510122076066,
+    0.31916989317854205,
+    0.02930851568183473
+  ],
+  "intercept": 1.767192615859712,
+  "metrics": {
+    "roc_auc": 0.7846,
+    "accuracy": 0.8216,
+    "brier": 0.1304,
+    "log_loss": 0.4127,
+    "baseline_accuracy": 0.7988,
+    "baseline_brier": 0.1607,
+    "baseline_log_loss": 0.5021,
+    "training_matches": 37,
+    "test_matches": 13,
+    "training_passes": 36388,
+    "test_passes": 12879
+  },
+  "limitations": "Uses recorded pass endpoint, which may differ from intended target on incomplete passes. Association, not a causal or real-time counterfactual forecast. No defender or pressure features."
+}
