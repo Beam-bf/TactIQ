@@ -1,0 +1,58 @@
+{
+  "dataset": "StatsBomb Open Data \u2014 2018 World Cup",
+  "method": "Sum of positive completed-pass xT gains per possession; same-possession shot association",
+  "matches": 50,
+  "possessions": 8760,
+  "possessions_with_shot": 1216,
+  "overall_shot_rate": 0.138813,
+  "shot_discrimination_auc": 0.757517,
+  "quintiles": [
+    {
+      "quintile": 1,
+      "possessions": 1752,
+      "shot_rate": 0.0879,
+      "mean_positive_xt": 0.0,
+      "mean_signed_xt": -0.00086,
+      "mean_shot_xg": 0.020565
+    },
+    {
+      "quintile": 2,
+      "possessions": 1752,
+      "shot_rate": 0.039384,
+      "mean_positive_xt": 0.00107,
+      "mean_signed_xt": -0.000395,
+      "mean_shot_xg": 0.00787
+    },
+    {
+      "quintile": 3,
+      "possessions": 1752,
+      "shot_rate": 0.052511,
+      "mean_positive_xt": 0.005543,
+      "mean_signed_xt": 0.001982,
+      "mean_shot_xg": 0.002957
+    },
+    {
+      "quintile": 4,
+      "possessions": 1752,
+      "shot_rate": 0.110731,
+      "mean_positive_xt": 0.014271,
+      "mean_signed_xt": 0.007588,
+      "mean_shot_xg": 0.008555
+    },
+    {
+      "quintile": 5,
+      "possessions": 1752,
+      "shot_rate": 0.403539,
+      "mean_positive_xt": 0.076175,
+      "mean_signed_xt": 0.062481,
+      "mean_shot_xg": 0.050274
+    }
+  ],
+  "limitations": [
+    "Descriptive association, not proof that passing xT causes shots or goals.",
+    "Positive xT counts only successful passes and excludes carries, dribbles, and turnovers.",
+    "Shot and passing events are aggregated across the same possession; this is not a prospective prediction.",
+    "Rank-based quintiles may split tied zero-xT possessions between groups.",
+    "StatsBomb 120x80 attack-relative event coordinates and the supplied xT grid are assumed compatible."
+  ]
+}
