@@ -1,0 +1,168 @@
+{
+  "dataset": "StatsBomb Open Data, World Cup 2018",
+  "test_match_count": 13,
+  "test_pass_count": 12879,
+  "positive_label": "completed",
+  "selected_threshold": 0.8,
+  "validation_threshold_results": [
+    {
+      "threshold": 0.5,
+      "incomplete_precision": 0.6106,
+      "incomplete_recall": 0.2051,
+      "incomplete_f1": 0.3071
+    },
+    {
+      "threshold": 0.6,
+      "incomplete_precision": 0.549,
+      "incomplete_recall": 0.3018,
+      "incomplete_f1": 0.3895
+    },
+    {
+      "threshold": 0.7,
+      "incomplete_precision": 0.4678,
+      "incomplete_recall": 0.4924,
+      "incomplete_f1": 0.4798
+    },
+    {
+      "threshold": 0.8,
+      "incomplete_precision": 0.3696,
+      "incomplete_recall": 0.7147,
+      "incomplete_f1": 0.4872
+    }
+  ],
+  "results": {
+    "accuracy": 0.70782,
+    "brier": 0.13044,
+    "log_loss": 0.41271,
+    "roc_auc": 0.78461,
+    "incomplete_precision": 0.37967,
+    "incomplete_recall": 0.71362,
+    "incomplete_f1": 0.49564,
+    "completed_f1": 0.79434,
+    "confusion_matrix": [
+      [
+        1849,
+        742
+      ],
+      [
+        3021,
+        7267
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "incomplete",
+      "completed"
+    ]
+  },
+  "constant_prior_baseline": {
+    "accuracy": 0.79882,
+    "brier": 0.16072,
+    "log_loss": 0.50206,
+    "roc_auc": 0.5,
+    "incomplete_precision": 0.0,
+    "incomplete_recall": 0.0,
+    "incomplete_f1": 0.0,
+    "completed_f1": 0.88816,
+    "confusion_matrix": [
+      [
+        0,
+        2591
+      ],
+      [
+        0,
+        10288
+      ]
+    ],
+    "confusion_matrix_labels": [
+      "incomplete",
+      "completed"
+    ]
+  },
+  "always_complete_baseline": {
+    "accuracy": 0.79882,
+    "incomplete_recall": 0.0,
+    "note": "Always predicts completed; Brier/log-loss for hard 100% probabilities are not used as calibration benchmarks."
+  },
+  "calibration_bins": [
+    {
+      "lower": 0.0,
+      "upper": 0.1,
+      "count": 17,
+      "mean_predicted": 0.07998,
+      "observed_completion": 0.23529
+    },
+    {
+      "lower": 0.1,
+      "upper": 0.2,
+      "count": 98,
+      "mean_predicted": 0.16171,
+      "observed_completion": 0.23469
+    },
+    {
+      "lower": 0.2,
+      "upper": 0.3,
+      "count": 176,
+      "mean_predicted": 0.25128,
+      "observed_completion": 0.25
+    },
+    {
+      "lower": 0.3,
+      "upper": 0.4,
+      "count": 263,
+      "mean_predicted": 0.3528,
+      "observed_completion": 0.37262
+    },
+    {
+      "lower": 0.4,
+      "upper": 0.5,
+      "count": 350,
+      "mean_predicted": 0.45191,
+      "observed_completion": 0.38857
+    },
+    {
+      "lower": 0.5,
+      "upper": 0.6,
+      "count": 551,
+      "mean_predicted": 0.55562,
+      "observed_completion": 0.56261
+    },
+    {
+      "lower": 0.6,
+      "upper": 0.7,
+      "count": 1340,
+      "mean_predicted": 0.65609,
+      "observed_completion": 0.6291
+    },
+    {
+      "lower": 0.7,
+      "upper": 0.8,
+      "count": 2075,
+      "mean_predicted": 0.75399,
+      "observed_completion": 0.75325
+    },
+    {
+      "lower": 0.8,
+      "upper": 0.9,
+      "count": 3574,
+      "mean_predicted": 0.85386,
+      "observed_completion": 0.85982
+    },
+    {
+      "lower": 0.9,
+      "upper": 1.0,
+      "count": 4435,
+      "mean_predicted": 0.94625,
+      "observed_completion": 0.94566
+    }
+  ],
+  "match_bootstrap": {
+    "unit": "held-out match",
+    "resamples": 1000,
+    "brier_improvement_model_vs_prior": {
+      "lower_95": 0.02644,
+      "upper_95": 0.03397
+    }
+  },
+  "limitations": "Observed endpoint on incomplete passes may not equal intended target. This is retrospective association, not a real-time recommendation or causal simulation. No defender pressure, time-of-pass game state, or tracking features.",
+  "note": "Confusion matrix rows=actual, columns=predicted, in label order [incomplete, completed]. Single grouped holdout split; not proof of transfer to other competitions."
+}

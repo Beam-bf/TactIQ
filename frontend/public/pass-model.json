@@ -1,9 +1,9 @@
 {
   "model_type": "standardized_logistic_regression",
-  "version": 1,
+  "version": 3,
   "trained": true,
   "dataset": "StatsBomb Open Data, World Cup 2018",
-  "task": "Estimate probability of completed pass given recorded start and endpoint",
+  "task": "Estimate completion given recorded start and endpoint of pass",
   "features": [
     "x",
     "y",
@@ -38,17 +38,23 @@
   ],
   "intercept": 1.767192615859712,
   "metrics": {
-    "roc_auc": 0.7846,
-    "accuracy": 0.8216,
-    "brier": 0.1304,
-    "log_loss": 0.4127,
-    "baseline_accuracy": 0.7988,
-    "baseline_brier": 0.1607,
-    "baseline_log_loss": 0.5021,
+    "roc_auc": 0.78461,
+    "accuracy": 0.70782,
+    "brier": 0.13044,
+    "log_loss": 0.41271,
+    "baseline_accuracy": 0.79882,
+    "baseline_brier": 0.16072,
+    "baseline_log_loss": 0.50206,
     "training_matches": 37,
     "test_matches": 13,
     "training_passes": 36388,
-    "test_passes": 12879
+    "test_passes": 12879,
+    "incomplete_precision": 0.37967,
+    "incomplete_recall": 0.71362,
+    "incomplete_f1": 0.49564,
+    "always_complete_accuracy": 0.79882,
+    "selected_threshold": 0.8,
+    "validation_matches": 8
   },
-  "limitations": "Uses recorded pass endpoint, which may differ from intended target on incomplete passes. Association, not a causal or real-time counterfactual forecast. No defender or pressure features."
+  "limitations": "Observed endpoint on incomplete passes may not equal intended target. This is retrospective association, not a real-time recommendation or causal simulation. No defender pressure, time-of-pass game state, or tracking features."
 }
